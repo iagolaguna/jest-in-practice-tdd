@@ -1,14 +1,9 @@
 
 const filter = (arr, func) => {
-    return filterInternal(arr, func, 0, []);
-}
-const filterInternal = (arr, func, counter, result) => {
-    if (counter >= arr.length) {
-        return result
-    }
-
-    func(arr[counter], counter, arr) && result.push(arr[counter])
-    
-    return filterInternal(arr, func, ++counter, result)
+    return (function filterInternal (counter = 0, result = []) {
+        return counter >= arr.length
+            ? result
+            : filterInternal(counter + 1, func(arr[counter], counter, arr) ? [...result, arr[counter]] : result)
+    })()
 }
 export default filter;
