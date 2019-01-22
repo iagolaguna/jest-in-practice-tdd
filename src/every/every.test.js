@@ -7,27 +7,27 @@ describe('Every', () => {
     })
 
     it('should every([1,2,3], (item) => item) return true', () => {
-        expect(every([1, 2, 3], (item) => item)).to.be.true
+        expect(every([1, 2, 3], (item) => item)).to.be.ok
     })
 
     it('should every([0, 1, 2, 3], (item) => item) return false', () => {
-        expect(every([0, 1, 2, 3], (item) => item)).to.be.false
+        expect(every([0, 1, 2, 3], (item) => item)).to.be.not.ok
     })
 
     it('should every([0, 1, 2, 3, 4], (item, index) => item === index) return true', () => {
-        expect(every([0, 1, 2, 3, 4], (item, index) => item === index)).to.be.true
+        expect(every([0, 1, 2, 3, 4], (item, index) => item === index)).to.be.ok
     })
 
     it('should every([0, 1, 2, 3, 4], (item, index) => index % 2) return false', () => {
-        expect(every([0, 1, 2, 3, 4], (item, index) => index % 2)).to.be.false
+        expect(every([0, 1, 2, 3, 4], (item, index) => index % 2)).to.be.not.ok
     })
 
     it('should every([0, 1, 2, 3, 4], (item, index, arr) => arr[index] === item) return true', () => {
-        expect(every([0, 1, 2, 3, 4], (item, index, arr) => arr[index] === item)).to.be.true
+        expect(every([0, 1, 2, 3, 4], (item, index, arr) => arr[index] === item)).to.be.ok
     })
 
     it('should every([0, 1, 2, 3, 4], (item, index, arr) => (arr[index]+index) === item) return false', () => {
-        expect(every([0, 1, 2, 3, 4], (item, index, arr) => (arr[index] + index) === item)).to.be.false
+        expect(every([0, 1, 2, 3, 4], (item, index, arr) => (arr[index] + index) === item)).to.be.not.ok
     })
 
 
